@@ -16,7 +16,6 @@
 
     swww = {
       url = "github:LGFae/swww";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
