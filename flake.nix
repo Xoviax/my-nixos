@@ -17,7 +17,7 @@
     swww = {
       url = "github:LGFae/swww";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, antigravity-nix, swww, ... }@inputs: {
