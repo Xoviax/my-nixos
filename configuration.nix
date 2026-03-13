@@ -25,10 +25,12 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "*";
   };
 
   programs.hyprland.enable = true;
   security.pam.services.hyprlock = {};
+  programs.dconf.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
