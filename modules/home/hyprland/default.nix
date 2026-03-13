@@ -13,7 +13,7 @@
     rofi
     waybar
     swww # For wallpaper
-    swaync # For notifications
+    swaynotificationcenter # For notifications
     brightnessctl # For brightness controls
     playerctl # For media controls
     hyprshot # For screenshots
