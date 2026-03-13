@@ -13,6 +13,8 @@
 
     mpv
     vlc
+
+    nautilus
   ];
 
   programs.git = {

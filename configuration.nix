@@ -21,7 +21,11 @@
   services.xserver.enable = true;
 
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   programs.hyprland.enable = true;
   security.pam.services.hyprlock = {};
