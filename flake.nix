@@ -13,13 +13,9 @@
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    swww = {
-      url = "github:LGFae/swww";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, antigravity-nix, swww, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, antigravity-nix, ... }@inputs: {
     nixosConfigurations = {
       zafkiel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

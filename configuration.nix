@@ -90,8 +90,7 @@
   wget
   unzip
   neovim
-
-  inputs.swww.packages.${pkgs.system}.swww
+  swww
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
