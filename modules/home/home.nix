@@ -26,8 +26,8 @@
   };
 
   imports = [
-    ./modules/home/hyprland/default.nix
-    ./modules/home/theme.nix
+    ./hyprland/default.nix
+    ./theme.nix
   ];
 
   programs.home-manager.enable = true;

@@ -4,8 +4,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
     };
     cursorTheme = {
       name = "Bibata-Modern-Classic";

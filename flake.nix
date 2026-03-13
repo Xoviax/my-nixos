@@ -23,15 +23,15 @@
         specialArgs = { inherit inputs; }; 
 
         modules = [
-          ./hardware-configuration.nix
-          ./configuration.nix
+          ./hosts/thinkpad/hardware-configuration.nix
+          ./hosts/thinkpad/configuration.nix
           
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             
-            home-manager.users.xoviax = import ./home.nix;
+            home-manager.users.xoviax = import ./modules/home/home.nix;
             
             home-manager.extraSpecialArgs = { inherit inputs; };
           }

@@ -3,8 +3,8 @@
 {
   imports =
     [ 
-      ./modules/system/boot/boot.nix
-      ./modules/system/power/tlp.nix
+      ../../modules/system/boot/boot.nix
+      ../../modules/system/power/tlp.nix
       ./hardware-configuration.nix
     ];
   
