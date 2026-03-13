@@ -83,6 +83,7 @@
 
   environment.systemPackages = with pkgs; [
   git
+  wget
   unzip
   neovim
   ];
@@ -106,6 +107,7 @@
   };
 
   # Open ports in the firewall.
+  networking.firewall.allowedTCPPorts = [ 22 80 443 3000 ];
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
