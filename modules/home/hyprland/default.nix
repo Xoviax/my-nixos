@@ -10,7 +10,7 @@
   # Also install Hyprland ecosystem dependencies like Kitty, Rofi, Waybar
   home.packages = with pkgs; [
     kitty
-    rofi-wayland
+    rofi
     waybar
     swww # For wallpaper
     swaync # For notifications
