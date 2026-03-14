@@ -6,7 +6,6 @@
   
   home.packages = with pkgs; [
     fastfetch
-    btop
     vscode
     inputs.antigravity-nix.packages.x86_64-linux.default
 
@@ -26,9 +25,11 @@
 
   imports = [
     ./hyprland/default.nix
+    inputs.stylix.homeManagerModules.stylix
   ];
 
   programs.home-manager.enable = true;
+  programs.btop.enable = true;
 
   qt.enable = true;
   gtk.enable = true;
