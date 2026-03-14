@@ -30,6 +30,8 @@
 
   programs.home-manager.enable = true;
 
+  programs.zsh.enable = true;
+
   qt.enable = true;
   gtk.enable = true;
 
