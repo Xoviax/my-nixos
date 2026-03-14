@@ -45,12 +45,12 @@
             
             home-manager.users.xoviax = import ./modules/home/home.nix;
 
-            home-manager.sharedModules [
+            home-manager.sharedModules = [
               {
                 stylix.targets.btop.colors.enable = true;
               }
-            ]
-            
+            ];
+
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
