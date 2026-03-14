@@ -9,13 +9,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     antigravity-nix = {
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, antigravity-nix, ... }@inputs: {
+  outputs = { self, 
+           nixpkgs, 
+           home-manager, 
+           stylix, 
+           antigravity-nix, 
+           ... }@inputs: {
     nixosConfigurations = {
       zafkiel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
