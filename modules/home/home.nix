@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/xoviax";
   
   home.packages = with pkgs; [
+    btop
     fastfetch
     vscode
     inputs.antigravity-nix.packages.x86_64-linux.default
