@@ -31,13 +31,6 @@
 
   programs.btop.enable = true;
 
-  home-manager.sharedModules = [
-    {
-      stylix.targets.btop.colors.enable = true;
-    }
-  ];
-}
-
   qt.enable = true;
   gtk.enable = true;
 
