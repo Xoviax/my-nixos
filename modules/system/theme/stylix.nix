@@ -4,7 +4,7 @@
   stylix.enable = true;
   stylix.image = ../../home/hyprland/wallpapers/kurumi.jpg;
   stylix.polarity = "dark";
-  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   stylix.cursor = {
     package = pkgs.bibata-cursors;
