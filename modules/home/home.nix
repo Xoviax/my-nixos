@@ -5,7 +5,6 @@
   home.homeDirectory = "/home/xoviax";
   
   home.packages = with pkgs; [
-    btop
     fastfetch
     vscode
     inputs.antigravity-nix.packages.x86_64-linux.default
@@ -30,8 +29,14 @@
 
   programs.home-manager.enable = true;
 
-  stylix.targets.btop.colors.enable = true;
+  programs.btop.enable = true;
 
+  home-manager.sharedModules = [
+    {
+      stylix.targets.btop.colors.enable = true;
+    }
+  ];
+}
 
   qt.enable = true;
   gtk.enable = true;
