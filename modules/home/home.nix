@@ -3,8 +3,7 @@
 {
   home.username = "xoviax";
   home.homeDirectory = "/home/xoviax";
-
-  # Install your personal apps here!
+  
   home.packages = with pkgs; [
     fastfetch
     btop
