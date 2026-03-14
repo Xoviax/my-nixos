@@ -14,7 +14,7 @@
     mpv
     vlc
 
-    nautilus
+    kdePackages.dolphin
   ];
 
   programs.git = {
