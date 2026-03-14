@@ -27,7 +27,6 @@
 
   imports = [
     ./hyprland/default.nix
-    ./theme.nix
   ];
 
   programs.home-manager.enable = true;

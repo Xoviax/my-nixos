@@ -5,6 +5,7 @@
     [ 
       ../../modules/system/boot/boot.nix
       ../../modules/system/power/tlp.nix
+      ../../modules/system/theme/stylix.nix
       ./hardware-configuration.nix
     ];
   
