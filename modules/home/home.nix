@@ -25,11 +25,12 @@
 
   imports = [
     ./hyprland/default.nix
-    inputs.stylix.homeManagerModules.stylix
   ];
 
   programs.home-manager.enable = true;
-  programs.btop.enable = true;
+
+  stylix.targets.btop.colors.enable = true;
+
 
   qt.enable = true;
   gtk.enable = true;
