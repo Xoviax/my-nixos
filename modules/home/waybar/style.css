@@ -1,0 +1,50 @@
+/* Floating Style Waybar */
+
+* {
+    /* Fonts and basic colors will be overridden by Stylix, 
+       but we define the "island" structure here */
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @theme_fg_color; /* Standard GTK/Stylix color variable */
+}
+
+/* Base style for all modules to make them look like "islands" */
+#clock,
+#tray,
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#temperature,
+#custom-battery {
+    background: rgba(30, 30, 46, 0.8); /* Semi-transparent background */
+    padding: 0 15px;
+    margin: 0 4px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stylix usually provides color variables or themes the bar.
+   We use specific IDs to maintain the island look while letting Stylix handle the rest. */
+
+#clock {
+    font-weight: bold;
+}
+
+#tray {
+    background: rgba(30, 30, 46, 0.6);
+}
+
+/* Hover effects for interactive modules */
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#cpu:hover,
+#temperature:hover,
+#custom-battery:hover {
+    background: rgba(49, 50, 68, 0.9);
+}

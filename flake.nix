@@ -25,10 +25,13 @@
            home-manager, 
            stylix, 
            antigravity-nix, 
-           ... }@inputs: {
+           ... }@inputs: 
+    let
+      system = "x86_64-linux";
+    in {
     nixosConfigurations = {
       zafkiel = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         
         specialArgs = { inherit inputs; }; 
 
@@ -42,10 +45,11 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             
             home-manager.users.xoviax = import ./modules/home/home.nix;
 
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { inherit inputs; inherit system; };
           }
         ];
       };

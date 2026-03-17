@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, system, ... }:
 
 {
   home.username = "xoviax";
@@ -8,7 +8,12 @@
     btop
     fastfetch
     vscode
-    inputs.antigravity-nix.packages.x86_64-linux.default
+    inputs.antigravity-nix.packages.${system}.default
+
+    weylus
+
+    wiremix
+    bluetui
 
     mpv
     vlc
@@ -24,6 +29,13 @@
     };
   };
 
+  home.shellAliases = {
+    ll = "ls -lh";
+    flakerebuild = "sudo nixos-rebuild switch --flake /home/xoviax/nixos-config#zafkiel";
+    port-mon-on = "hyprctl output create headless";
+    port-mon-off = "hyprctl output remove HEADLESS-2";
+  };
+  
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -53,10 +65,10 @@
   imports = [
     ./hyprland/default.nix
   ];
+  xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
+  # xdg.configFile."waybar/style.css".source = ./waybar/style.css;
 
   programs.home-manager.enable = true;
-
-  
 
   qt.enable = true;
   gtk.enable = true;

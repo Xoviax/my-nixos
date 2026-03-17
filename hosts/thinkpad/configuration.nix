@@ -11,9 +11,15 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "zafkiel";
+  networking = {
+    hostName = "zafkiel";
+    networkmanager.enable = true;
+  };
 
-  networking.networkmanager.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
+  };
 
   time.timeZone = "America/Winnipeg";
 
@@ -30,6 +36,7 @@
   };
 
   programs.hyprland.enable = true;
+  programs.waybar.enable = true;
   security.pam.services.hyprlock = {};
   programs.dconf.enable = true;
 
@@ -83,11 +90,21 @@
   users.users.xoviax = {
     isNormalUser = true;
     description = "Rayn Yorobe";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "uinput" ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
   };
+
+  ###### Weylus ######
+
+  users.groups.uinput = {};
+
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
+
+  ####################
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
@@ -99,7 +116,6 @@
   wget
   unzip
   neovim
-  swww
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -121,7 +137,7 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 443 3000 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 3000 5900 1701 ];
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
