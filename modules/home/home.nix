@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, system, ... }:
+{ config, 
+  pkgs, 
+  inputs, 
+  system, 
+  lib, 
+  ... 
+}:
 
 {
   home.username = "xoviax";
@@ -65,8 +71,12 @@
   imports = [
     ./hyprland/default.nix
   ];
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+  };
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
-  # xdg.configFile."waybar/style.css".source = ./waybar/style.css;
+  xdg.configFile."waybar/style.css".source = lib.mkForce ./waybar/style.css;
 
   programs.home-manager.enable = true;
 

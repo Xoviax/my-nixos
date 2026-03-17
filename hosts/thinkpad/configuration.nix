@@ -36,7 +36,7 @@
   };
 
   programs.hyprland.enable = true;
-  programs.waybar.enable = true;
+  # programs.waybar.enable = true;
   security.pam.services.hyprlock = {};
   programs.dconf.enable = true;
 

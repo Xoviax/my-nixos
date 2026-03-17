@@ -30,7 +30,7 @@
 
   home.packages = with pkgs; [
     rofi
-    waybar
+    # waybar (managed via programs.waybar)
     swww # For wallpaper
     swaynotificationcenter # For notifications
     brightnessctl # For brightness controls
