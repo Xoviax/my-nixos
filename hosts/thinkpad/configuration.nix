@@ -28,6 +28,9 @@
   services.xserver.enable = true;
 
   services.displayManager.gdm.enable = true;
+
+  services.gvfs.enable = true;
+  service.samba.enable = true;
   
   xdg.portal = {
     enable = true;

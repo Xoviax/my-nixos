@@ -6,56 +6,61 @@
     "margin-left": 10,
     "margin-right": 10,
     "spacing": 8,
-    "modules-left": ["clock"],
-    "modules-center": ["tray"],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "temperature", "custom/battery"],
-
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": [
+        "tray"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "cpu",
+        "temperature",
+        "custom/battery"
+    ],
     "clock": {
         "format": "󱑊 {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
-
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "󰝟 Muted",
         "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
         },
         "on-click": "wiremix"
     },
-
     "bluetooth": {
         "format": "󰂯 {status}",
         "format-connected": "󰂯 {device_alias}",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "on-click": "bluetui"
+        "on-click": "kitty -e bluetui"
     },
-
     "network": {
         "format-wifi": "󰖩 {essid}",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 Disconnected",
-        "on-click": "nm-connection-editor", // nmtui doesn't always handle terminal context well
-        "on-click-right": "kitty -e nmtui"   // Alternative for nmtui
+        "on-click": "kitty -e nmtui"
     },
-
     "cpu": {
         "format": "󰍛 {usage}%",
         "on-click": "kitty -e btop"
     },
-
     "temperature": {
-        "format": "󰔏 {temperatureC}°C",
-        "on-click": "kitty -e btop"
+        "format": "󰔏 {temperatureC}°C"
     },
-
     "custom/battery": {
         "exec": "/home/xoviax/nixos-config/modules/home/waybar/battery.sh",
         "return-type": "json",
