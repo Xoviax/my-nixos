@@ -1,31 +1,89 @@
-/* Floating Style Waybar */
-
 * {
-    /* Fonts and basic colors will be overridden by Stylix, 
-       but we define the "island" structure here */
-    border: none;
-    border-radius: 0;
+  border: none;
+  border-radius: 0px;
+
+  font-family: "CaskaydiaCove Nerd Font Propo", "JetBrainsMono Nerd Font Propo",
+    sans-serif;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 window#waybar {
     background: transparent;
-    color: @theme_fg_color; /* Standard GTK/Stylix color variable */
+    color: @base05;
+}
+
+tooltip {
+  background: @base00;
+  border: 1px solid @base03;
+  border-radius: 18px;
+}
+
+tooltip label {
+  color: @base05;
+  padding: 6px;
+}
+
+#workspaces {
+  background-color: @base00;
+  padding: 5px 3px;
+  margin: 0 0 0 12px;
+  border-radius: 18px;
+  border: 1px solid @base01;
+  color: @base05;
+}
+
+#workspaces button {
+  padding: 0px 6px;
+  margin: 0px 3px;
+  border-radius: 50px;
+  color: transparent;
+  background-color: @base01;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  background-color: @base0D;
+  color: @base00;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+#workspaces button:hover {
+  background-color:@base07;
+  color: @base00;
+  border-radius: 18px;
+  min-width: 50px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+  background-color: @base08;
+  color: @base00;
+  border-radius: 18px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Base style for all modules to make them look like "islands" */
 #clock,
-#tray,
 #pulseaudio,
 #bluetooth,
 #network,
-#cpu,
-#temperature,
+#hardware,
 #custom-battery {
-    background: rgba(30, 30, 46, 0.8); /* Semi-transparent background */
-    padding: 0 15px;
-    margin: 0 4px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: @base00;
+    padding: 0 15px 0 15px;
+    margin: 0 0 0 12px;
+    border-radius: 18px;
+    border: 1px solid @base01;
 }
 
 /* Stylix usually provides color variables or themes the bar.
@@ -35,16 +93,19 @@ window#waybar {
     font-weight: bold;
 }
 
-#tray {
-    background: rgba(30, 30, 46, 0.6);
-}
-
 /* Hover effects for interactive modules */
 #pulseaudio:hover,
 #bluetooth:hover,
 #network:hover,
-#cpu:hover,
-#temperature:hover,
+#hardware:hover,
 #custom-battery:hover {
-    background: rgba(49, 50, 68, 0.9);
+    background: alpha(@base02, 0.9);
+}
+
+#hardware #cpu,
+#hardware #temperature {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 5px;
 }

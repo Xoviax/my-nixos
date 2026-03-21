@@ -7,7 +7,8 @@
     "margin-right": 10,
     "spacing": 8,
     "modules-left": [
-        "clock"
+        "clock",
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "tray"
@@ -16,43 +17,94 @@
         "pulseaudio",
         "bluetooth",
         "network",
-        "cpu",
-        "temperature",
+        "group/hardware",
         "custom/battery"
     ],
     "clock": {
-        "format": "󱑊 {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "interval": 60,
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%A, %d %B %Y}",
+        "max-length": 30
+    },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "eDP-1": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
     },
     "tray": {
-        "icon-size": 18,
+        "icon-size": 21,
         "spacing": 10
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟 Muted",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
         "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
             "default": [
-                "󰕿",
-                "󰖀",
-                "󰕾"
+                "",
+                ""
             ]
         },
-        "on-click": "wiremix"
+        "scroll-step": 1,
+        "on-click": "kitty -e wiremix",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
     },
     "bluetooth": {
-        "format": "󰂯 {status}",
-        "format-connected": "󰂯 {device_alias}",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "kitty -e bluetui"
     },
     "network": {
-        "format-wifi": "󰖩 {essid}",
-        "format-ethernet": "󰈀 {ifname}",
-        "format-disconnected": "󰖪 Disconnected",
-        "on-click": "kitty -e nmtui"
+        "format": "{essid}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "No Connection", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 25,
+        "on-click": "kitty nmtui"
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "temperature"
+        ]
     },
     "cpu": {
         "format": "󰍛 {usage}%",
