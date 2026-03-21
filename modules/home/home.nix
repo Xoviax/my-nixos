@@ -18,6 +18,8 @@
 
     weylus
 
+    vesktop
+
     wiremix
     bluetui
 
