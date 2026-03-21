@@ -30,7 +30,7 @@
   services.displayManager.gdm.enable = true;
 
   services.gvfs.enable = true;
-  service.samba.enable = true;
+  services.samba.enable = true;
   
   xdg.portal = {
     enable = true;
