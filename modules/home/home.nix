@@ -25,6 +25,7 @@
 
     mpv
     vlc
+    tidal-hifi
 
     nautilus
   ];
