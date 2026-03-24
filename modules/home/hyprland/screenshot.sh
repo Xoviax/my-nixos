@@ -1,20 +1,30 @@
 #!/usr/bin/env bash
 
+# Use absolute paths or let Nix interpolate them
+GRIM="${GRIM:-grim}"
+SLURP="${SLURP:-slurp}"
+WL_COPY="${WL_COPY:-wl-copy}"
+PKILL="${PKILL:-pkill}"
+PREVIEW="${PREVIEW:-omarchy-screenshot-preview}"
+
 # Create screenshots directory if it doesn't exist
 mkdir -p "$HOME/Pictures/Screenshots"
 
+# Select region
+REGION=$($SLURP) || exit 1
+
 FILEPATH="$HOME/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')"
 
-# Capture screenshot with grim and slurp
-grim -g "$(slurp)" "$FILEPATH"
+# Capture screenshot
+$GRIM -g "$REGION" "$FILEPATH"
 
 if [ -f "$FILEPATH" ]; then
     # Copy to clipboard
-    wl-copy < "$FILEPATH"
+    $WL_COPY < "$FILEPATH"
 
     # Kill any existing preview instance
-    pkill -f 'omarchy-screenshot-preview' 2>/dev/null
+    $PKILL -f 'omarchy-screenshot-preview' 2>/dev/null
 
     # Launch preview tool
-    omarchy-screenshot-preview "$FILEPATH" &
+    $PREVIEW "$FILEPATH" &
 fi

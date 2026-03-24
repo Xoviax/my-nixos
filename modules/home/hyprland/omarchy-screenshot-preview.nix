@@ -4,6 +4,7 @@
 , pkg-config
 , gtk4
 , gtk4-layer-shell
+, wrapGAppsHook4
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -17,10 +18,11 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-MPO1lerULNFHVP2PBQXCKcyikNVm+OmZ4NbS+l0sM70=";
   };
 
-  cargoHash = lib.fakeHash;
+  cargoHash = "sha256-g9MdW9p8iotUrBHXEWZZ/u2yiopbjEY0SbjPaZxcDFQ=";
 
   nativeBuildInputs = [
     pkg-config
+    wrapGAppsHook4
   ];
 
   buildInputs = [

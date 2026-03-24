@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+  omarchy-screenshot-preview = pkgs.callPackage ./omarchy-screenshot-preview.nix { };
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -38,7 +41,14 @@
     slurp
     wl-clipboard
     satty
-    (pkgs.callPackage ./omarchy-screenshot-preview.nix { })
-    (pkgs.writeShellScriptBin "omarchy-screenshot" (builtins.readFile ./screenshot.sh))
+    omarchy-screenshot-preview
+    (pkgs.writeShellScriptBin "omarchy-screenshot" ''
+      export GRIM="${pkgs.grim}/bin/grim"
+      export SLURP="${pkgs.slurp}/bin/slurp"
+      export WL_COPY="${pkgs.wl-clipboard}/bin/wl-copy"
+      export PKILL="${pkgs.procps}/bin/pkill"
+      export PREVIEW="${omarchy-screenshot-preview}/bin/omarchy-screenshot-preview"
+      ${builtins.readFile ./screenshot.sh}
+    '')
   ];
 }
