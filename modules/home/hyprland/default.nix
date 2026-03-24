@@ -34,5 +34,11 @@
     brightnessctl # For brightness controls
     playerctl # For media controls
     hyprshot # For screenshots
+    grim
+    slurp
+    wl-clipboard
+    satty
+    (pkgs.callPackage ./omarchy-screenshot-preview.nix { })
+    (pkgs.writeShellScriptBin "omarchy-screenshot" (builtins.readFile ./screenshot.sh))
   ];
 }
