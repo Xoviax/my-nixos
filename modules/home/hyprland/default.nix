@@ -48,6 +48,8 @@ in
       export WL_COPY="${pkgs.wl-clipboard}/bin/wl-copy"
       export PKILL="${pkgs.procps}/bin/pkill"
       export PREVIEW="${omarchy-screenshot-preview}/bin/omarchy-screenshot-preview"
+      export HYPRCTL="${pkgs.hyprland}/bin/hyprctl"
+      export JQ="${pkgs.jq}/bin/jq"
       ${builtins.readFile ./screenshot.sh}
     '')
   ];
