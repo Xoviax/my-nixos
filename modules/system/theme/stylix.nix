@@ -2,7 +2,7 @@
 
 {
   stylix.enable = true;
-  stylix.image = ../../home/hyprland/wallpapers/wallhaven-kw318d.jpg;
+  stylix.image = ../../home/hyprland/wallpapers/wallhaven-8geml1.jpg;
   stylix.polarity = "dark";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 

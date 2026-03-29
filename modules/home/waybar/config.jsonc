@@ -14,7 +14,7 @@
         "tray"
     ],
     "modules-right": [
-        "pulseaudio",
+        "wireplumber",
         "bluetooth",
         "network",
         "group/hardware",
@@ -51,30 +51,20 @@
         "icon-size": 21,
         "spacing": 10
     },
-    "pulseaudio": {
+    "wireplumber": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "󰓃",
             "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "󰓄",
-            "headphone": "",
-            "hands-free": "󰋋",
-            "headset": "󰋋",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
+            "bluez_output.AC:80:FB:F9:D3:88": "",
             "default": [
                 "",
                 ""
             ]
         },
         "scroll-step": 1,
-        "on-click": "kitty --class waybar_wiremix -e wiremix",
-        "ignored-sinks": [
-            "Easy Effects Sink"
-        ]
+        "on-click": "kitty --class waybar_wiremix -e wiremix"
     },
     "bluetooth": {
         "format": " {status}",

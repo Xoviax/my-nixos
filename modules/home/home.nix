@@ -82,7 +82,6 @@
 
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
   };
 
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;

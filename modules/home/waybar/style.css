@@ -74,13 +74,13 @@ tooltip label {
 
 /* Base style for all modules to make them look like "islands" */
 #clock,
-#pulseaudio,
+#wireplumber,
 #bluetooth,
 #network,
 #hardware,
 #custom-battery {
     background-color: @base00;
-    padding: 0 15px 0 15px;
+    padding: 0 8px 0 8px;
     margin: 0 0 0 12px;
     border-radius: 18px;
     border: 1px solid @base01;
@@ -94,7 +94,7 @@ tooltip label {
 }
 
 /* Hover effects for interactive modules */
-#pulseaudio:hover,
+#wireplumber:hover,
 #bluetooth:hover,
 #network:hover,
 #hardware:hover,
