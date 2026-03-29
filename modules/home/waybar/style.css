@@ -80,7 +80,7 @@ tooltip label {
 #hardware,
 #custom-battery {
     background-color: @base00;
-    padding: 0 8px 0 8px;
+    padding: 0 15px 0 15px;
     margin: 0 0 0 12px;
     border-radius: 18px;
     border: 1px solid @base01;
