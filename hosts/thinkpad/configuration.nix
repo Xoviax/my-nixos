@@ -52,6 +52,7 @@
     nerd-fonts.symbols-only
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
     nerd-fonts.hack
     nerd-fonts.droid-sans-mono
   ];
@@ -110,6 +111,25 @@
   ####################
 
   programs.firefox.enable = true;
+
+  programs.chromium = {
+    enable = true;
+    homepageLocation = "https://www.startpage.com/";
+    extensions = [
+      "aapbdbdomjkkjkaonfhkkikfgjllcleb;https://clients2.google.com/service/update2/crx" # google translate
+      "ddkjiahejlhfcafbddmgiahcphecmpfh;https://clients2.google.com/service/update2/crx" # uBlock Origin Lite
+    ];
+    extraOpts = {
+      "WebAppInstallForceList" = [
+        {
+          "custom_name" = "Youtube";
+          "create_desktop_shortcut" = false;
+          "default_launch_container" = "window";
+          "url" = "https://youtube.com";
+        }
+      ];
+    };
+  };
   
   programs.zsh.enable = true;
 

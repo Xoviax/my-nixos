@@ -32,11 +32,9 @@ in
   };
 
   home.packages = with pkgs; [
-    rofi
     swaynotificationcenter # For notifications
     brightnessctl # For brightness controls
     playerctl # For media controls
-    hyprshot # For screenshots
     grim
     slurp
     wl-clipboard

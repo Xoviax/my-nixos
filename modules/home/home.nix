@@ -74,10 +74,17 @@
   imports = [
     ./hyprland/default.nix
   ];
+
   programs.waybar = {
     enable = true;
     systemd.enable = true;
   };
+
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi-wayland;
+  };
+
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
   stylix.targets.waybar.enable = false;
   xdg.configFile."waybar/style.css".text = lib.mkForce ''
