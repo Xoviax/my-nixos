@@ -35,7 +35,7 @@
       name = "Microsoft Teams";
       genericName = "Web Application";
       exec = "${pkgs.chromium}/bin/chromium --app=\"https://teams.microsoft.com\"";
-      icon = "./webapp-icons/microsoft-teams.svg";
+      icon = ./webapp-icons/microsoft-teams.svg;
       terminal = false;
       categories = [ "Network" "WebBrowser" ];
     };
@@ -44,7 +44,7 @@
       name = "Google Gemini";
       genericName = "Web Application";
       exec = "${pkgs.chromium}/bin/chromium --app=\"https://gemini.google.com\"";
-      icon = "./webapp-icons/google-gemini.svg";
+      icon = ./webapp-icons/google-gemini.svg;
       terminal = false;
       categories = [ "Network" "WebBrowser" ];  
     };
