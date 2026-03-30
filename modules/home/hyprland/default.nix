@@ -39,6 +39,7 @@ in
     slurp
     wl-clipboard
     satty
+    imagemagick
     omarchy-screenshot-preview
     (pkgs.writeShellScriptBin "omarchy-screenshot" ''
       export GRIM="${pkgs.grim}/bin/grim"
@@ -48,6 +49,7 @@ in
       export PREVIEW="${omarchy-screenshot-preview}/bin/omarchy-screenshot-preview"
       export HYPRCTL="${pkgs.hyprland}/bin/hyprctl"
       export JQ="${pkgs.jq}/bin/jq"
+      export MAGICK="${pkgs.imagemagick}/bin/magick"
       ${builtins.readFile ./screenshot.sh}
     '')
   ];

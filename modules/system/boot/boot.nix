@@ -7,7 +7,7 @@
       efiSupport = true;
 
       style = {
-        wallpapers = [ ./boot-bg.png ];
+        # wallpapers = [ ./boot-bg.png ];
         wallpaperStyle = "stretched";
       };
   
