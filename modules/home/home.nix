@@ -30,6 +30,26 @@
     nautilus
   ];
 
+  xdg.desktopEntries = {
+    "microsoft-teams" = {
+      name = "Microsoft Teams";
+      genericName = "Web Application";
+      exec = "${pkgs.chromium}/bin/chromium --app=\"https://teams.microsoft.com\"";
+      icon = "./webapp-icons/microsoft-teams.svg";
+      terminal = false;
+      categories = [ "Network" "WebBrowser" ];
+    };
+
+    "google-gemini" = {
+      name = "Google Gemini";
+      genericName = "Web Application";
+      exec = "${pkgs.chromium}/bin/chromium --app=\"https://gemini.google.com\"";
+      icon = "./webapp-icons/google-gemini.svg";
+      terminal = false;
+      categories = [ "Network" "WebBrowser" ];  
+    };
+  };
+
   programs.git = {
     enable = true;
     settings = {
