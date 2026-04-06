@@ -59,6 +59,9 @@
   };
 
   home.shellAliases = {
+    shutdown = "systemctl poweroff";
+    reboot = "systemctl reboot";
+    sleep = "systemctl suspend";
     ll = "ls -lh";
     flakerebuild = "sudo nixos-rebuild switch --flake /home/xoviax/nixos-config#zafkiel";
     port-mon-on = "hyprctl output create headless";
@@ -93,6 +96,7 @@
 
   imports = [
     ./hyprland/default.nix
+    ./rofi/powermenu.nix
   ];
 
   programs.waybar = {
