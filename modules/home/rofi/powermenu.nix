@@ -137,7 +137,7 @@
       logout="󰍃"
 
       # Prompt
-      prompt="Welcome, $USER"
+      prompt="Hello, $USER"
 
       # Pass variables to rofi dmenu
       chosen=$(printf "%s\n%s\n%s\n%s\n%s" "$shutdown" "$reboot" "$lock" "$suspend" "$logout" | rofi -dmenu -theme ~/.config/rofi/powermenu.rasi -p "$prompt")
