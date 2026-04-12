@@ -67,8 +67,6 @@
     port-mon-on = "hyprctl output create headless";
     port-mon-off = "hyprctl output remove HEADLESS-2";
 
-    tvmode = "hyprctl keyword monitor eDP-1, disable && hyprctl keyword monitor HDMI-A-2, 3840x2160@60, 0x0, 2 && hyprctl reload";
-    laptopmode = "hyprctl keyword monitor HDMI-A-2, disable && hyprctl keyword monitor eDP-1, 1920x1080@60, 0x0, 1 && hyprctl reload";
   };
   
   programs.zsh = {
@@ -109,6 +107,41 @@
 
   programs.rofi = {
     enable = true;
+  };
+
+  services.kanshi = {
+    enable = true;
+    systemdTarget = "hyprland-session.target";
+    settings = [
+      {
+        profile.name = "undocked";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            status = "enable";
+            mode = "1920x1080@60";
+            position = "0,0";
+            scale = 1.0;
+          }
+        ];
+      }
+      {
+        profile.name = "docked";
+        profile.outputs = [
+          {
+            criteria = "eDP-1";
+            status = "disable";
+          }
+          {
+            criteria = "HDMI-A-2";
+            status = "enable";
+            mode = "3840x2160@60";
+            position = "0,0";
+            scale = 2.0;
+          }
+        ];
+      }
+    ];
   };
 
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
