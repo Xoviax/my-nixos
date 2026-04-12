@@ -67,8 +67,8 @@
     port-mon-on = "hyprctl output create headless";
     port-mon-off = "hyprctl output remove HEADLESS-2";
 
-    tvmode = "hyprctl keyword monitor eDP-1, disable && hyprctl keyword monitor HDMI-A-2, 3840x2160@60, 0x0, 2";
-    laptopmode = "hyprctl keyword monitor HDMI-A-2, disable && hyprctl keyword monitor eDP-1, 1920x1080@60, 0x0, 1";
+    tvmode = "hyprctl keyword monitor eDP-1, disable && hyprctl keyword monitor HDMI-A-2, 3840x2160@60, 0x0, 2 && hyprctl reload";
+    laptopmode = "hyprctl keyword monitor HDMI-A-2, disable && hyprctl keyword monitor eDP-1, 1920x1080@60, 0x0, 1 && hyprctl reload";
   };
   
   programs.zsh = {
