@@ -135,7 +135,7 @@
           {
             criteria = "HDMI-A-2";
             status = "enable";
-            mode = "3840x2160@60";
+            mode = "3840x2160@30";
             position = "0,0";
             scale = 2.0;
           }
